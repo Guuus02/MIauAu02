@@ -1,0 +1,335 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fefefe;
+  color: #333;
+}
+
+header {
+  background-color: #5C5470;
+  color: white;
+  padding: 0.35rem 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.menu-btn {
+  display: none;
+}
+
+.location span {
+  font-size: 0.8rem;
+}
+
+.location h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.search-section {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.search-section input {
+  flex: 1;
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.filter-btn {
+  background-color: #5C5470;
+  color: white;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+}
+
+.categories {
+  padding: 1rem;
+}
+
+.category-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.category-buttons button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 20px;
+  background-color: #DBD8E3;
+  color: #352F44;
+  cursor: pointer;
+}
+
+.category-buttons button.active {
+  background-color: #5C5470;
+  color: white;
+}
+
+.pet-list {
+  padding: 1rem;
+}
+
+.pet-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.pet-card {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.pet-card:hover,
+.pet-card:active,
+.pet-card:focus {
+  transform: scale(1.05);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  z-index: 2;
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .pet-card:active,
+  .pet-card:focus {
+    transform: scale(1.05);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    z-index: 2;
+  }
+}
+
+.pet-card img {
+  width: 100%;
+  height: 200px; /* Altura fixa para uniformizar */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorção */
+}
+
+.pet-info {
+  padding: 0.5rem;
+}
+
+.pet-info h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+.pet-detail-page {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fefefe;
+  color: #352F44;
+   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.pet-header {
+  position: relative;
+}
+
+.pet-header button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ffffffcc;
+  border: none;
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  z-index: 10;
+}
+
+.pet-main-img {
+  min-width: 100%;
+  width: 100%;
+  height: 500px; /* aumentada para dar mais destaque vertical */
+  object-fit: cover;
+  background: #f6f8fa;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.pet-info-section {
+  padding: 1rem;
+    flex: 1;
+
+}
+
+.pet-info-section h2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.location {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.pet-stats {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #5C5470;
+}
+
+.bio {
+  margin-top: 1rem;
+}
+
+.bio a {
+  color: #E07A5F;
+  font-size: 0.9rem;
+}
+
+.foster-parent {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 1.5rem;
+  padding: 0.5rem 0;
+  border-top: 1px solid #dbd8e3;
+}
+
+.foster-parent img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.adopt-btn {
+  display: block;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #5C5470;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  margin-bottom: 0;
+  cursor: pointer;
+}
+
+.logo img {
+  max-width: 100px;
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  header {
+    padding: 0.22rem 0.45rem;
+  }
+  .logo img {
+    max-width: 65px;
+  }
+  .menu-btn {
+    font-size: 1.15rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .pet-cards {
+    grid-template-columns: repeat(3, 1fr); /* Exibe 3 cards por linha em telas maiores */
+  }
+
+  .pet-card img {
+    height: 350px; /* Aumenta a altura das imagens para telas maiores */
+  }
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 1rem auto;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 12px;
+}
+.carousel {
+  display: flex;
+  position: relative;
+  height: 400px;
+  align-items: center;
+  justify-content: center;
+}
+.pet-main-img {
+  min-width: 100%;
+  width: 100%;
+  height: 500px; /* aumentada para dar mais destaque vertical */
+  object-fit: cover;
+  background: #f6f8fa;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.pet-main-img.active {
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
+  z-index: 2;
+}
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  color: #5C5470;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  cursor: pointer;
+  z-index: 5;
+  opacity: 0.8;
+}
+.carousel-btn.prev { left: 10px; }
+.carousel-btn.next { right: 10px; }
+@media (max-width: 900px) {
+  .carousel-container {
+    max-width: 98vw;
+  }
+  .carousel, .pet-main-img {
+    height: 260px;
+  }
+}
+@media (max-width: 600px) {
+  .carousel-container {
+    max-width: 100vw;
+    border-radius: 0;
+  }
+  .carousel, .pet-main-img {
+    height: 180px;
+    border-radius: 0;
+  }
+}
